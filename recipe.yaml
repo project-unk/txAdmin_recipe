@@ -1,0 +1,55 @@
+name: project-unk RedM server
+version: v1.0
+author: overextended, project-unk
+description: Recipe for RedM server base, that is using ox stuff & and later cool project-unk scripts.
+
+tasks: 
+    - action: download_github
+      src: https://github.com/citizenfx/cfx-server-data
+      subpath: resources
+      dest: ./resources/[cfx]
+
+    - action: download_github
+      src: https://github.com/project-unk/txAdmin_recipe
+      ref: main
+      dest: ./tmp/recipe/
+
+    - action: download_github
+      dest: ./resources/[ox]/oxmysql
+      ref: main
+      src: https://github.com/project-unk/oxmysql
+
+    - action: download_github
+      dest: ./resources/[ox]/ox_lib
+      ref: main
+      src: https://github.com/project-unk/ox_lib
+      
+    - action: download_github
+      dest: ./resources/[framework]/ox_core
+      ref: main
+      src: https://github.com/project-unk/ox_core_redm
+
+    - action: download_github
+      dest: ./resources/[ox]/ox_inventory
+      ref: main
+      src: https://github.com/project-unk/ox_inventory_redm
+
+    - action: move_path
+      src: ./tmp/recipe/server.cfg
+      dest: ./server.cfg
+
+    - action: move_path
+      src: ./tmp/recipe/server-shared.cfg
+      dest: ./server-shared.cfg
+
+    - action: move_path
+      src: ./tmp/recipe/server-permissions.cfg
+      dest: ./server-permissions.cfg
+
+    - action: connect_database
+    - action: query_database
+      file: ./tmp/recipe/database.sql
+
+    - action: remove_path
+      path: ./tmp
+      
