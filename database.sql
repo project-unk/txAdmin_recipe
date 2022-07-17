@@ -82,5 +82,5 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
 	PRIMARY KEY (`id`) USING BTREE,
 	UNIQUE INDEX `plate` (`plate`) USING BTREE,
 	INDEX `FK_vehicles_characters` (`owner`) USING BTREE,
-	CONSTRAINT `FK_vehicles_characters` FOREIGN KEY (`owner`) REFERENCES `overextended`.`characters` (`charid`) ON UPDATE RESTRICT ON DELETE CASCADE
+	CONSTRAINT `FK_vehicles_characters` FOREIGN KEY (`owner`) REFERENCES `characters` (`charid`) ON UPDATE RESTRICT ON DELETE CASCADE
 ) ENGINE = InnoDB;
