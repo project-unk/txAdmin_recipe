@@ -1,3 +1,2 @@
-# project-unk RedM server base recipe
-
-# Warning: Its not ready for usage, still WIP.
+* project-unk RedM server base recipe
+* txAdmin recipe link: https://raw.githubusercontent.com/project-unk/txAdmin_recipe/main/recipe.yaml
